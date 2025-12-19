@@ -165,66 +165,6 @@
             transform: translateX(280px);
         }
 
-        /* Full Screen Screens */
-        .screen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: var(--parchment);
-            z-index: 999;
-            transform: translateX(100%);
-            transition: transform 0.3s ease;
-            overflow-y: auto;
-            padding: 70px 20px 20px;
-        }
-
-        .screen.active {
-            transform: translateX(0);
-        }
-
-        .screen-header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: var(--parchment);
-            border-bottom: 2px solid var(--border);
-            padding: 15px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            z-index: 1000;
-        }
-
-        .screen-back-btn {
-            background: none;
-            border: 2px solid var(--border);
-            border-radius: 5px;
-            width: 40px;
-            height: 40px;
-            font-size: 18px;
-            color: var(--accent);
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .screen-title {
-            font-family: 'Uncial Antiqua', cursive;
-            font-size: 20px;
-            color: var(--accent);
-            flex: 1;
-        }
-
-        .screen-content {
-            padding: 20px;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
         /* Verse Styling */
         .verse {
             margin-bottom: 20px;
@@ -262,16 +202,6 @@
             color: var(--ink);
         }
 
-        /* Highlight Classes */
-        .highlight-yellow { background-color: var(--highlight-yellow) !important; }
-        .highlight-blue { background-color: var(--highlight-blue) !important; }
-        .highlight-green { background-color: var(--highlight-green) !important; }
-        .highlight-pink { background-color: var(--highlight-pink) !important; }
-        .highlight-purple { background-color: var(--highlight-purple) !important; }
-        .underlined { text-decoration: underline 2px var(--accent); }
-        .italicized { font-style: italic; }
-        .bold { font-weight: bold; }
-
         /* Loading */
         .loading {
             text-align: center;
@@ -292,20 +222,6 @@
 
         @keyframes spin {
             to { transform: rotate(360deg); }
-        }
-
-        /* Skeleton Loading */
-        .skeleton {
-            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-            background-size: 200% 100%;
-            animation: loading 1.5s infinite;
-            border-radius: 4px;
-            margin: 10px 0;
-        }
-
-        @keyframes loading {
-            0% { background-position: 200% 0; }
-            100% { background-position: -200% 0; }
         }
 
         /* Modal */
@@ -474,131 +390,6 @@
             background: rgba(255, 255, 255, 0.9);
         }
 
-        /* Notebook Styling */
-        .notebook-page {
-            background: white;
-            border: 2px solid var(--border);
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 3px 10px rgba(139, 90, 43, 0.1);
-            position: relative;
-            min-height: 150px;
-        }
-
-        .notebook-page::before {
-            content: '';
-            position: absolute;
-            left: 40px;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: repeating-linear-gradient(
-                to bottom,
-                transparent,
-                transparent 20px,
-                var(--border) 20px,
-                var(--border) 21px
-            );
-        }
-
-        .note-title {
-            font-family: 'Uncial Antiqua', cursive;
-            font-size: 20px;
-            color: var(--accent);
-            margin-bottom: 15px;
-            padding-left: 50px;
-            border-bottom: 2px solid var(--border);
-            padding-bottom: 8px;
-        }
-
-        .note-content {
-            padding-left: 50px;
-            line-height: 1.8;
-            color: var(--ink);
-            font-size: 16px;
-            white-space: pre-wrap;
-        }
-
-        .note-reference {
-            color: var(--accent);
-            font-weight: bold;
-            margin-bottom: 10px;
-            padding-left: 50px;
-            font-size: 14px;
-        }
-
-        .note-date {
-            color: #888;
-            font-size: 12px;
-            padding-left: 50px;
-            margin-top: 15px;
-        }
-
-        /* Search */
-        .search-input {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 2px solid var(--border);
-            border-radius: 5px;
-            font-size: 14px;
-        }
-
-        .search-results {
-            max-height: 300px;
-            overflow-y: auto;
-        }
-
-        .search-result {
-            padding: 10px;
-            border-bottom: 1px solid var(--border);
-            cursor: pointer;
-        }
-
-        .search-result:hover {
-            background: rgba(139, 90, 43, 0.1);
-        }
-
-        /* Settings */
-        .settings-group {
-            margin-bottom: 20px;
-        }
-
-        .settings-label {
-            display: block;
-            margin-bottom: 8px;
-            color: var(--accent);
-            font-weight: bold;
-        }
-
-        .font-slider {
-            width: 100%;
-            height: 6px;
-            -webkit-appearance: none;
-            appearance: none;
-            background: var(--border);
-            border-radius: 3px;
-            outline: none;
-        }
-
-        .font-slider::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            appearance: none;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background: var(--accent);
-            cursor: pointer;
-        }
-
-        .font-size-display {
-            text-align: center;
-            margin-top: 8px;
-            font-weight: bold;
-            color: var(--accent);
-        }
-
         /* Toast */
         .toast {
             position: fixed;
@@ -667,18 +458,6 @@
             .verse-actions {
                 grid-template-columns: repeat(2, 1fr);
             }
-            
-            .notebook-page {
-                padding: 15px;
-            }
-            
-            .notebook-page::before {
-                left: 30px;
-            }
-            
-            .note-title, .note-content, .note-reference, .note-date {
-                padding-left: 40px;
-            }
         }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap" rel="stylesheet">
@@ -708,23 +487,23 @@
             </div>
         </div>
         <div class="menu-items">
-            <div class="menu-item" onclick="openBookSelection()">
+            <div class="menu-item" onclick="openBookModal()">
                 <i class="fas fa-book-open"></i>
                 <span>Books</span>
             </div>
-            <div class="menu-item" onclick="openNotebookScreen()">
+            <div class="menu-item" onclick="openNotebook()">
                 <i class="fas fa-book"></i>
                 <span>Notebook</span>
             </div>
-            <div class="menu-item" onclick="openHighlightsScreen()">
+            <div class="menu-item" onclick="openHighlights()">
                 <i class="fas fa-highlighter"></i>
                 <span>Highlights</span>
             </div>
-            <div class="menu-item" onclick="openSettingsScreen()">
+            <div class="menu-item" onclick="openSettings()">
                 <i class="fas fa-cog"></i>
                 <span>Settings</span>
             </div>
-            <div class="menu-item" onclick="openAboutScreen()">
+            <div class="menu-item" onclick="openAbout()">
                 <i class="fas fa-info-circle"></i>
                 <span>About</span>
             </div>
@@ -732,7 +511,7 @@
     </div>
 
     <!-- Main Content -->
-    <div class="content" id="mainContent">
+    <div class="content">
         <div id="bibleContent">
             <div class="loading">
                 <div class="spinner"></div>
@@ -744,96 +523,6 @@
     <!-- Navigation Hint -->
     <div class="nav-hint" id="navHint">
         <i class="fas fa-arrows-left-right"></i> Swipe left/right to navigate chapters
-    </div>
-
-    <!-- Full Screen Screens -->
-    <!-- Notebook Screen -->
-    <div class="screen" id="notebookScreen">
-        <div class="screen-header">
-            <button class="screen-back-btn" onclick="closeScreen('notebookScreen')">
-                <i class="fas fa-arrow-left"></i>
-            </button>
-            <div class="screen-title">
-                <i class="fas fa-book"></i> My Notebook
-            </div>
-        </div>
-        <div class="screen-content" id="notebookContent">
-            <!-- Notebook content will be loaded here -->
-        </div>
-    </div>
-
-    <!-- Highlights Screen -->
-    <div class="screen" id="highlightsScreen">
-        <div class="screen-header">
-            <button class="screen-back-btn" onclick="closeScreen('highlightsScreen')">
-                <i class="fas fa-arrow-left"></i>
-            </button>
-            <div class="screen-title">
-                <i class="fas fa-highlighter"></i> My Highlights
-            </div>
-        </div>
-        <div class="screen-content" id="highlightsContent">
-            <!-- Highlights content will be loaded here -->
-        </div>
-    </div>
-
-    <!-- Settings Screen -->
-    <div class="screen" id="settingsScreen">
-        <div class="screen-header">
-            <button class="screen-back-btn" onclick="closeScreen('settingsScreen')">
-                <i class="fas fa-arrow-left"></i>
-            </button>
-            <div class="screen-title">
-                <i class="fas fa-cog"></i> Settings
-            </div>
-        </div>
-        <div class="screen-content">
-            <div class="settings-group">
-                <label class="settings-label">Font Size</label>
-                <input type="range" min="14" max="24" value="18" class="font-slider" id="fontSizeSlider" 
-                       oninput="updateFontSize(this.value)">
-                <div class="font-size-display" id="fontSizeDisplay">18px</div>
-            </div>
-            
-            <div class="settings-group">
-                <label class="settings-label">Line Height</label>
-                <input type="range" min="1.4" max="2.2" step="0.1" value="1.8" class="font-slider" id="lineHeightSlider" 
-                       oninput="updateLineHeight(this.value)">
-                <div class="font-size-display" id="lineHeightDisplay">1.8</div>
-            </div>
-            
-            <div class="settings-group">
-                <button class="action-btn" style="width: 100%; padding: 15px;" onclick="clearCache()">
-                    <i class="fas fa-trash"></i> Clear Cache
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- About Screen -->
-    <div class="screen" id="aboutScreen">
-        <div class="screen-header">
-            <button class="screen-back-btn" onclick="closeScreen('aboutScreen')">
-                <i class="fas fa-arrow-left"></i>
-            </button>
-            <div class="screen-title">
-                <i class="fas fa-info-circle"></i> About
-            </div>
-        </div>
-        <div class="screen-content">
-            <div style="text-align: center; margin-bottom: 20px;">
-                <i class="fas fa-bible" style="font-size: 36px; color: var(--accent);"></i>
-                <h2 style="color: var(--accent); margin: 10px 0;">Holy Bible Reader</h2>
-                <p>King James Version</p>
-                <p><small>Offline Version - Works without internet</small></p>
-            </div>
-            <div style="border-top: 2px solid var(--border); padding-top: 15px;">
-                <p style="font-style: italic; color: var(--accent);">
-                    "Thy word is a lamp unto my feet, and a light unto my path."<br>
-                    - Psalm 119:105
-                </p>
-            </div>
-        </div>
     </div>
 
     <!-- Book Selection Modal -->
@@ -931,29 +620,6 @@
         </div>
     </div>
 
-    <!-- Search Modal -->
-    <div class="modal" id="searchModal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <span><i class="fas fa-search"></i> Search Bible</span>
-                <button class="modal-close" onclick="closeModal('searchModal')">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-            <div class="modal-body">
-                <input type="text" class="search-input" id="searchInput" 
-                       placeholder="Search for words or phrases..." 
-                       oninput="performSearch()">
-                <div class="search-results" id="searchResults">
-                    <div style="text-align: center; padding: 30px; color: var(--accent);">
-                        <i class="fas fa-search" style="font-size: 24px; margin-bottom: 10px;"></i>
-                        <p>Enter search terms above</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Toast -->
     <div class="toast" id="toast">
         <i class="fas fa-check-circle"></i>
@@ -963,7 +629,7 @@
     <script>
         // ========== STATE MANAGEMENT ==========
         const state = {
-            currentBook: 'genesis',
+            currentBookIndex: 0, // Index in the bibleData array
             currentBookName: 'Genesis',
             currentChapter: 1,
             selectedVerseKey: null,
@@ -972,94 +638,39 @@
             highlights: JSON.parse(localStorage.getItem('bibleHighlights') || '{}'),
             notes: JSON.parse(localStorage.getItem('bibleNotes') || '{}'),
             settings: JSON.parse(localStorage.getItem('bibleSettings') || '{}'),
-            books: {
-                old: [
-                    {id: 'genesis', name: 'Genesis', chapters: 50},
-                    {id: 'exodus', name: 'Exodus', chapters: 40},
-                    {id: 'leviticus', name: 'Leviticus', chapters: 27},
-                    {id: 'numbers', name: 'Numbers', chapters: 36},
-                    {id: 'deuteronomy', name: 'Deuteronomy', chapters: 34},
-                    {id: 'joshua', name: 'Joshua', chapters: 24},
-                    {id: 'judges', name: 'Judges', chapters: 21},
-                    {id: 'ruth', name: 'Ruth', chapters: 4},
-                    {id: '1 samuel', name: '1 Samuel', chapters: 31},
-                    {id: '2 samuel', name: '2 Samuel', chapters: 24},
-                    {id: '1 kings', name: '1 Kings', chapters: 22},
-                    {id: '2 kings', name: '2 Kings', chapters: 25},
-                    {id: '1 chronicles', name: '1 Chronicles', chapters: 29},
-                    {id: '2 chronicles', name: '2 Chronicles', chapters: 36},
-                    {id: 'ezra', name: 'Ezra', chapters: 10},
-                    {id: 'nehemiah', name: 'Nehemiah', chapters: 13},
-                    {id: 'esther', name: 'Esther', chapters: 10},
-                    {id: 'job', name: 'Job', chapters: 42},
-                    {id: 'psalms', name: 'Psalms', chapters: 150},
-                    {id: 'proverbs', name: 'Proverbs', chapters: 31},
-                    {id: 'ecclesiastes', name: 'Ecclesiastes', chapters: 12},
-                    {id: 'song of solomon', name: 'Song of Solomon', chapters: 8},
-                    {id: 'isaiah', name: 'Isaiah', chapters: 66},
-                    {id: 'jeremiah', name: 'Jeremiah', chapters: 52},
-                    {id: 'lamentations', name: 'Lamentations', chapters: 5},
-                    {id: 'ezekiel', name: 'Ezekiel', chapters: 48},
-                    {id: 'daniel', name: 'Daniel', chapters: 12},
-                    {id: 'hosea', name: 'Hosea', chapters: 14},
-                    {id: 'joel', name: 'Joel', chapters: 3},
-                    {id: 'amos', name: 'Amos', chapters: 9},
-                    {id: 'obadiah', name: 'Obadiah', chapters: 1},
-                    {id: 'jonah', name: 'Jonah', chapters: 4},
-                    {id: 'micah', name: 'Micah', chapters: 7},
-                    {id: 'nahum', name: 'Nahum', chapters: 3},
-                    {id: 'habakkuk', name: 'Habakkuk', chapters: 3},
-                    {id: 'zephaniah', name: 'Zephaniah', chapters: 3},
-                    {id: 'haggai', name: 'Haggai', chapters: 2},
-                    {id: 'zechariah', name: 'Zechariah', chapters: 14},
-                    {id: 'malachi', name: 'Malachi', chapters: 4}
-                ],
-                new: [
-                    {id: 'matthew', name: 'Matthew', chapters: 28},
-                    {id: 'mark', name: 'Mark', chapters: 16},
-                    {id: 'luke', name: 'Luke', chapters: 24},
-                    {id: 'john', name: 'John', chapters: 21},
-                    {id: 'acts', name: 'Acts', chapters: 28},
-                    {id: 'romans', name: 'Romans', chapters: 16},
-                    {id: '1 corinthians', name: '1 Corinthians', chapters: 16},
-                    {id: '2 corinthians', name: '2 Corinthians', chapters: 13},
-                    {id: 'galatians', name: 'Galatians', chapters: 6},
-                    {id: 'ephesians', name: 'Ephesians', chapters: 6},
-                    {id: 'philippians', name: 'Philippians', chapters: 4},
-                    {id: 'colossians', name: 'Colossians', chapters: 4},
-                    {id: '1 thessalonians', name: '1 Thessalonians', chapters: 5},
-                    {id: '2 thessalonians', name: '2 Thessalonians', chapters: 3},
-                    {id: '1 timothy', name: '1 Timothy', chapters: 6},
-                    {id: '2 timothy', name: '2 Timothy', chapters: 4},
-                    {id: 'titus', name: 'Titus', chapters: 3},
-                    {id: 'philemon', name: 'Philemon', chapters: 1},
-                    {id: 'hebrews', name: 'Hebrews', chapters: 13},
-                    {id: 'james', name: 'James', chapters: 5},
-                    {id: '1 peter', name: '1 Peter', chapters: 5},
-                    {id: '2 peter', name: '2 Peter', chapters: 3},
-                    {id: '1 john', name: '1 John', chapters: 5},
-                    {id: '2 john', name: '2 John', chapters: 1},
-                    {id: '3 john', name: '3 John', chapters: 1},
-                    {id: 'jude', name: 'Jude', chapters: 1},
-                    {id: 'revelation', name: 'Revelation', chapters: 22}
-                ]
-            }
+            bookNames: [
+                "Genesis", "Exodus", "Leviticus", "Numbers", "Deuteronomy", "Joshua", 
+                "Judges", "Ruth", "1 Samuel", "2 Samuel", "1 Kings", "2 Kings", 
+                "1 Chronicles", "2 Chronicles", "Ezra", "Nehemiah", "Esther", "Job", 
+                "Psalms", "Proverbs", "Ecclesiastes", "Song of Solomon", "Isaiah", 
+                "Jeremiah", "Lamentations", "Ezekiel", "Daniel", "Hosea", "Joel", 
+                "Amos", "Obadiah", "Jonah", "Micah", "Nahum", "Habakkuk", "Zephaniah", 
+                "Haggai", "Zechariah", "Malachi", "Matthew", "Mark", "Luke", "John", 
+                "Acts", "Romans", "1 Corinthians", "2 Corinthians", "Galatians", 
+                "Ephesians", "Philippians", "Colossians", "1 Thessalonians", 
+                "2 Thessalonians", "1 Timothy", "2 Timothy", "Titus", "Philemon", 
+                "Hebrews", "James", "1 Peter", "2 Peter", "1 John", "2 John", 
+                "3 John", "Jude", "Revelation"
+            ]
         };
 
         // ========== BIBLE DATA LOADING ==========
         async function loadBibleData() {
             try {
-                // Load the Bible JSON file
+                console.log('Loading Bible data...');
                 const response = await fetch('bible.json');
                 if (!response.ok) {
-                    throw new Error('Failed to load Bible data');
+                    throw new Error(`HTTP error! status: ${response.status}`);
                 }
                 
                 state.bibleData = await response.json();
-                console.log('Bible data loaded successfully');
+                console.log('Bible data loaded successfully. Books found:', state.bibleData.length);
+                
+                // Initialize books list for UI
+                initializeBooks();
                 
                 // Load the first chapter
-                loadChapter('genesis', 1);
+                loadChapter(0, 1);
                 
             } catch (error) {
                 console.error('Error loading Bible data:', error);
@@ -1067,7 +678,12 @@
                     <div class="loading">
                         <div style="color: #dc2626; margin-bottom: 10px;">⚠️</div>
                         <h3 style="color: var(--accent); margin-bottom: 10px;">Error Loading Bible</h3>
-                        <p>Failed to load Bible data. Please ensure bible.json is in the same directory.</p>
+                        <p>Failed to load bible.json file. Please ensure:</p>
+                        <ol style="text-align: left; margin: 10px 20px; font-size: 14px;">
+                            <li>bible.json is in the same directory as this HTML file</li>
+                            <li>The file contains valid JSON data</li>
+                            <li>Check browser console for detailed error</li>
+                        </ol>
                         <button class="action-btn" onclick="loadBibleData()" style="margin-top: 10px; padding: 10px;">
                             <i class="fas fa-redo"></i> Retry
                         </button>
@@ -1076,18 +692,32 @@
             }
         }
 
+        function initializeBooks() {
+            // Create book mapping with proper names
+            state.books = {
+                old: state.bookNames.slice(0, 39).map((name, index) => ({
+                    id: index,
+                    name: name,
+                    chapters: state.bibleData[index].chapters.length
+                })),
+                new: state.bookNames.slice(39).map((name, index) => ({
+                    id: index + 39,
+                    name: name,
+                    chapters: state.bibleData[index + 39].chapters.length
+                }))
+            };
+        }
+
         // ========== CHAPTER LOADING ==========
-        function loadChapter(book, chapter) {
+        function loadChapter(bookIndex, chapter) {
             if (state.isLoading) return;
             
             state.isLoading = true;
             
-            if (book && chapter) {
-                state.currentBook = book;
+            if (bookIndex !== undefined && chapter !== undefined) {
+                state.currentBookIndex = bookIndex;
                 state.currentChapter = chapter;
-                const allBooks = [...state.books.old, ...state.books.new];
-                const bookInfo = allBooks.find(b => b.id === book);
-                if (bookInfo) state.currentBookName = bookInfo.name;
+                state.currentBookName = state.bookNames[bookIndex];
             }
             
             document.getElementById('currentRef').innerHTML = 
@@ -1098,14 +728,12 @@
                     throw new Error('Bible data not loaded');
                 }
                 
-                // Get the book data from bible.json
-                const bookData = state.bibleData[state.currentBook];
+                const bookData = state.bibleData[state.currentBookIndex];
                 if (!bookData) {
-                    throw new Error(`Book ${state.currentBook} not found in data`);
+                    throw new Error(`Book ${state.currentBookIndex} not found in data`);
                 }
                 
-                // Get the chapter data
-                const chapterData = bookData[state.currentChapter.toString()];
+                const chapterData = bookData.chapters[state.currentChapter - 1];
                 if (!chapterData) {
                     throw new Error(`Chapter ${state.currentChapter} not found`);
                 }
@@ -1135,62 +763,31 @@
         function displayVerses(verses) {
             let html = '';
             
-            // Check if verses is an array (your JSON structure) or object
-            if (Array.isArray(verses)) {
-                // If verses is an array of strings
-                verses.forEach((verseText, index) => {
-                    const verseNumber = index + 1;
-                    const verseKey = `${state.currentBook}-${state.currentChapter}-${verseNumber}`;
-                    const verseData = state.highlights[verseKey] || {};
-                    const note = state.notes[verseKey] || '';
-                    
-                    let verseClasses = 'verse';
-                    if (verseData.highlight) verseClasses += ` highlight-${verseData.highlight}`;
-                    if (verseData.underline) verseClasses += ' underlined';
-                    if (verseData.italic) verseClasses += ' italicized';
-                    if (verseData.bold) verseClasses += ' bold';
-                    
-                    html += `
-                        <div class="${verseClasses}" 
-                             data-verse-key="${verseKey}"
-                             onclick="selectVerse('${verseKey}')"
-                             oncontextmenu="event.preventDefault(); openVerseActions('${verseKey}')"
-                             ontouchstart="startTouch('${verseKey}')"
-                             ontouchend="endTouch('${verseKey}')">
-                            <span class="verse-number">${verseNumber}</span>
-                            <span class="verse-text">${verseText}</span>
-                            ${note ? `<div style="margin-top: 8px; font-style: italic; color: #666; font-size: 14px;">${note}</div>` : ''}
-                        </div>
-                    `;
-                });
-            } else if (typeof verses === 'object') {
-                // If verses is an object with verse numbers as keys
-                Object.keys(verses).forEach(verseNumber => {
-                    const verseText = verses[verseNumber];
-                    const verseKey = `${state.currentBook}-${state.currentChapter}-${verseNumber}`;
-                    const verseData = state.highlights[verseKey] || {};
-                    const note = state.notes[verseKey] || '';
-                    
-                    let verseClasses = 'verse';
-                    if (verseData.highlight) verseClasses += ` highlight-${verseData.highlight}`;
-                    if (verseData.underline) verseClasses += ' underlined';
-                    if (verseData.italic) verseClasses += ' italicized';
-                    if (verseData.bold) verseClasses += ' bold';
-                    
-                    html += `
-                        <div class="${verseClasses}" 
-                             data-verse-key="${verseKey}"
-                             onclick="selectVerse('${verseKey}')"
-                             oncontextmenu="event.preventDefault(); openVerseActions('${verseKey}')"
-                             ontouchstart="startTouch('${verseKey}')"
-                             ontouchend="endTouch('${verseKey}')">
-                            <span class="verse-number">${verseNumber}</span>
-                            <span class="verse-text">${verseText}</span>
-                            ${note ? `<div style="margin-top: 8px; font-style: italic; color: #666; font-size: 14px;">${note}</div>` : ''}
-                        </div>
-                    `;
-                });
-            }
+            verses.forEach((verseText, index) => {
+                const verseNumber = index + 1;
+                const verseKey = `${state.currentBookIndex}-${state.currentChapter}-${verseNumber}`;
+                const verseData = state.highlights[verseKey] || {};
+                const note = state.notes[verseKey] || '';
+                
+                let verseClasses = 'verse';
+                if (verseData.highlight) verseClasses += ` highlight-${verseData.highlight}`;
+                if (verseData.underline) verseClasses += ' underlined';
+                if (verseData.italic) verseClasses += ' italicized';
+                if (verseData.bold) verseClasses += ' bold';
+                
+                html += `
+                    <div class="${verseClasses}" 
+                         data-verse-key="${verseKey}"
+                         onclick="selectVerse('${verseKey}')"
+                         oncontextmenu="event.preventDefault(); openVerseActions('${verseKey}')"
+                         ontouchstart="startTouch('${verseKey}')"
+                         ontouchend="endTouch('${verseKey}')">
+                        <span class="verse-number">${verseNumber}</span>
+                        <span class="verse-text">${verseText}</span>
+                        ${note ? `<div style="margin-top: 8px; font-style: italic; color: #666; font-size: 14px;">${note}</div>` : ''}
+                    </div>
+                `;
+            });
             
             document.getElementById('bibleContent').innerHTML = html;
         }
@@ -1242,31 +839,18 @@
         // ========== NAVIGATION FUNCTIONS ==========
         function prevChapter() {
             if (state.currentChapter > 1) {
-                loadChapter(state.currentBook, state.currentChapter - 1);
+                loadChapter(state.currentBookIndex, state.currentChapter - 1);
             }
         }
 
         function nextChapter() {
-            const currentBook = [...state.books.old, ...state.books.new]
-                .find(b => b.id === state.currentBook);
-            
-            if (currentBook && state.currentChapter < currentBook.chapters) {
-                loadChapter(state.currentBook, state.currentChapter + 1);
+            const bookData = state.bibleData[state.currentBookIndex];
+            if (bookData && state.currentChapter < bookData.chapters.length) {
+                loadChapter(state.currentBookIndex, state.currentChapter + 1);
             }
         }
 
-        // ========== MODAL & SCREEN MANAGEMENT ==========
-        function openScreen(screenId) {
-            closeSidebar();
-            document.getElementById(screenId).classList.add('active');
-            document.getElementById('navHint').style.display = 'none';
-        }
-
-        function closeScreen(screenId) {
-            document.getElementById(screenId).classList.remove('active');
-            document.getElementById('navHint').style.display = 'block';
-        }
-
+        // ========== MODAL MANAGEMENT ==========
         function openModal(modalId) {
             closeSidebar();
             closeAllModals();
@@ -1289,16 +873,14 @@
         // ========== SIDEBAR ==========
         function toggleSidebar() {
             document.getElementById('sidebar').classList.toggle('active');
-            document.getElementById('mainContent').classList.toggle('shifted');
         }
 
         function closeSidebar() {
             document.getElementById('sidebar').classList.remove('active');
-            document.getElementById('mainContent').classList.remove('shifted');
         }
 
         // ========== BOOK SELECTION ==========
-        function openBookSelection() {
+        function openBookModal() {
             filterBooks('all');
             openModal('bookModal');
         }
@@ -1325,7 +907,7 @@
                 bookItem.className = 'book-item';
                 bookItem.textContent = book.name;
                 bookItem.onclick = () => {
-                    state.currentBook = book.id;
+                    state.currentBookIndex = book.id;
                     state.currentBookName = book.name;
                     closeModal('bookModal');
                     setTimeout(() => openChapterModal(), 300);
@@ -1336,7 +918,7 @@
 
         function openChapterModal() {
             const currentBook = [...state.books.old, ...state.books.new]
-                .find(b => b.id === state.currentBook);
+                .find(b => b.id === state.currentBookIndex);
             if (!currentBook) return;
             
             document.getElementById('chapterTitle').innerHTML = 
@@ -1345,10 +927,11 @@
             const chapterList = document.getElementById('chapterList');
             chapterList.innerHTML = '';
             
-            const columns = Math.ceil(Math.sqrt(currentBook.chapters));
+            const chapters = currentBook.chapters;
+            const columns = Math.ceil(Math.sqrt(chapters));
             chapterList.style.gridTemplateColumns = `repeat(${columns}, 1fr)`;
             
-            for (let i = 1; i <= currentBook.chapters; i++) {
+            for (let i = 1; i <= chapters; i++) {
                 const chapterItem = document.createElement('div');
                 chapterItem.className = 'book-item';
                 chapterItem.textContent = i;
@@ -1369,10 +952,10 @@
             const verseData = state.highlights[verseKey] || {};
             const note = state.notes[verseKey] || '';
             
-            const [bookId, chapter, verse] = verseKey.split('-');
-            const book = [...state.books.old, ...state.books.new].find(b => b.id === bookId);
+            const [bookIndex, chapter, verse] = verseKey.split('-');
+            const bookName = state.bookNames[bookIndex];
             document.getElementById('verseTitle').innerHTML = 
-                `<i class="fas fa-edit"></i> ${book?.name || 'Book'} ${chapter}:${verse}`;
+                `<i class="fas fa-edit"></i> ${bookName} ${chapter}:${verse}`;
             
             document.getElementById('verseNote').value = note;
             
@@ -1456,10 +1039,10 @@
             const verseElement = document.querySelector(`[data-verse-key="${state.selectedVerseKey}"]`);
             if (verseElement) {
                 const verseText = verseElement.querySelector('.verse-text').textContent;
-                const [bookId, chapter, verse] = state.selectedVerseKey.split('-');
-                const book = [...state.books.old, ...state.books.new].find(b => b.id === bookId);
+                const [bookIndex, chapter, verse] = state.selectedVerseKey.split('-');
+                const bookName = state.bookNames[bookIndex];
                 
-                const textToCopy = `${book?.name || 'Book'} ${chapter}:${verse} - "${verseText}"`;
+                const textToCopy = `${bookName} ${chapter}:${verse} - "${verseText}"`;
                 
                 navigator.clipboard.writeText(textToCopy).then(() => {
                     showToast('Verse copied to clipboard');
@@ -1475,10 +1058,10 @@
             const verseElement = document.querySelector(`[data-verse-key="${state.selectedVerseKey}"]`);
             if (verseElement) {
                 const verseText = verseElement.querySelector('.verse-text').textContent;
-                const [bookId, chapter, verse] = state.selectedVerseKey.split('-');
-                const book = [...state.books.old, ...state.books.new].find(b => b.id === bookId);
+                const [bookIndex, chapter, verse] = state.selectedVerseKey.split('-');
+                const bookName = state.bookNames[bookIndex];
                 
-                const shareText = `${book?.name || 'Book'} ${chapter}:${verse}\n"${verseText}"`;
+                const shareText = `${bookName} ${chapter}:${verse}\n"${verseText}"`;
                 
                 if (navigator.share) {
                     navigator.share({
@@ -1511,255 +1094,47 @@
             showToast('Changes saved');
         }
 
-        // ========== SCREEN FUNCTIONS ==========
-        function openNotebookScreen() {
-            const content = document.getElementById('notebookContent');
+        // ========== MENU FUNCTIONS ==========
+        function openNotebook() {
             const notes = Object.entries(state.notes);
             
             if (notes.length === 0) {
-                content.innerHTML = `
-                    <div style="text-align: center; padding: 50px 20px; color: var(--accent);">
-                        <i class="fas fa-sticky-note" style="font-size: 36px; margin-bottom: 15px;"></i>
-                        <h3 style="margin-bottom: 10px;">No Notes Yet</h3>
-                        <p>Add notes by long-pressing on verses</p>
-                    </div>
-                `;
+                alert('No notes yet. Add notes by long-pressing on verses.');
             } else {
-                let html = '';
+                let notebookContent = 'MY NOTEBOOK\n\n';
                 notes.forEach(([verseKey, note]) => {
-                    const [bookId, chapter, verse] = verseKey.split('-');
-                    const book = [...state.books.old, ...state.books.new].find(b => b.id === bookId);
-                    const verseData = state.highlights[verseKey] || {};
-                    
-                    // Extract title from note (first line) or use default
-                    const lines = note.split('\n');
-                    const title = lines[0].length > 50 ? lines[0].substring(0, 50) + '...' : lines[0];
-                    const content = lines.slice(1).join('\n') || lines[0];
-                    
-                    html += `
-                        <div class="notebook-page">
-                            <div class="note-reference">${book?.name || bookId} ${chapter}:${verse}</div>
-                            <div class="note-title">${title}</div>
-                            <div class="note-content">${content}</div>
-                            <div class="note-date">${new Date().toLocaleDateString()}</div>
-                        </div>
-                    `;
+                    const [bookIndex, chapter, verse] = verseKey.split('-');
+                    const bookName = state.bookNames[bookIndex];
+                    notebookContent += `${bookName} ${chapter}:${verse}\n${note}\n\n`;
                 });
                 
-                content.innerHTML = html;
+                alert(notebookContent);
             }
-            
-            openScreen('notebookScreen');
         }
 
-        function openHighlightsScreen() {
-            const content = document.getElementById('highlightsContent');
+        function openHighlights() {
             const highlights = Object.entries(state.highlights);
             
             if (highlights.length === 0) {
-                content.innerHTML = `
-                    <div style="text-align: center; padding: 50px 20px; color: var(--accent);">
-                        <i class="fas fa-highlighter" style="font-size: 36px; margin-bottom: 15px;"></i>
-                        <h3 style="margin-bottom: 10px;">No Highlights Yet</h3>
-                        <p>Highlight verses by long-pressing on them</p>
-                    </div>
-                `;
+                alert('No highlights yet. Highlight verses by long-pressing on them.');
             } else {
-                let html = '';
+                let highlightsContent = 'MY HIGHLIGHTS\n\n';
                 highlights.forEach(([verseKey, data]) => {
-                    const [bookId, chapter, verse] = verseKey.split('-');
-                    const book = [...state.books.old, ...state.books.new].find(b => b.id === bookId);
-                    
-                    html += `
-                        <div class="search-result" onclick="goToSearchResult('${bookId}', ${chapter}, ${verse})">
-                            <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
-                                <div style="font-weight: bold; color: var(--accent);">
-                                    ${book?.name || bookId} ${chapter}:${verse}
-                                </div>
-                                ${data.highlight ? `<div class="highlight-btn ${data.highlight}" style="width: 20px; height: 20px;"></div>` : ''}
-                            </div>
-                            ${state.notes[verseKey] ? `<div style="font-size: 14px; color: #555; font-style: italic;">${state.notes[verseKey]}</div>` : ''}
-                        </div>
-                    `;
+                    const [bookIndex, chapter, verse] = verseKey.split('-');
+                    const bookName = state.bookNames[bookIndex];
+                    highlightsContent += `${bookName} ${chapter}:${verse} - Highlight: ${data.highlight || 'none'}\n`;
                 });
                 
-                content.innerHTML = html;
+                alert(highlightsContent);
             }
-            
-            openScreen('highlightsScreen');
         }
 
-        function openSettingsScreen() {
-            openScreen('settingsScreen');
+        function openSettings() {
+            alert('Settings will be implemented in the next version.');
         }
 
-        function openAboutScreen() {
-            openScreen('aboutScreen');
-        }
-
-        // ========== SEARCH ==========
-        function openSearchModal() {
-            openModal('searchModal');
-            document.getElementById('searchInput').focus();
-        }
-
-        let searchTimeout;
-        async function performSearch() {
-            const query = document.getElementById('searchInput').value.trim();
-            const resultsDiv = document.getElementById('searchResults');
-            
-            if (query.length < 2) {
-                resultsDiv.innerHTML = '<div style="text-align: center; padding: 30px; color: #666;">Enter at least 2 characters</div>';
-                return;
-            }
-            
-            resultsDiv.innerHTML = '<div style="text-align: center; padding: 30px; color: var(--accent);"><div class="spinner"></div><p>Searching...</p></div>';
-            
-            clearTimeout(searchTimeout);
-            searchTimeout = setTimeout(() => {
-                try {
-                    const results = searchLocalBibleText(query);
-                    displaySearchResults(results);
-                } catch (error) {
-                    console.error('Search error:', error);
-                    resultsDiv.innerHTML = '<div style="text-align: center; padding: 30px; color: var(--accent);"><p>Search failed. Please try again.</p></div>';
-                }
-            }, 500);
-        }
-
-        function searchLocalBibleText(query) {
-            const results = [];
-            const queryLower = query.toLowerCase();
-            
-            // Limit search to popular books for performance
-            const popularBooks = ['genesis', 'psalms', 'matthew', 'john', 'proverbs'];
-            
-            popularBooks.forEach(bookId => {
-                const book = [...state.books.old, ...state.books.new].find(b => b.id === bookId);
-                if (!book || !state.bibleData[bookId]) return;
-                
-                const chaptersToSearch = Math.min(5, book.chapters);
-                for (let chapter = 1; chapter <= chaptersToSearch; chapter++) {
-                    const chapterData = state.bibleData[bookId][chapter.toString()];
-                    if (!chapterData) continue;
-                    
-                    // Handle both array and object formats
-                    if (Array.isArray(chapterData)) {
-                        chapterData.forEach((verseText, verseIndex) => {
-                            if (verseText.toLowerCase().includes(queryLower)) {
-                                results.push({
-                                    book: book.name,
-                                    bookId: bookId,
-                                    chapter: chapter,
-                                    verse: verseIndex + 1,
-                                    text: verseText
-                                });
-                            }
-                        });
-                    } else if (typeof chapterData === 'object') {
-                        Object.keys(chapterData).forEach(verseNumber => {
-                            const verseText = chapterData[verseNumber];
-                            if (verseText.toLowerCase().includes(queryLower)) {
-                                results.push({
-                                    book: book.name,
-                                    bookId: bookId,
-                                    chapter: chapter,
-                                    verse: parseInt(verseNumber),
-                                    text: verseText
-                                });
-                            }
-                        });
-                    }
-                    
-                    if (results.length >= 50) break;
-                }
-                if (results.length >= 50) break;
-            });
-            
-            return results.slice(0, 50);
-        }
-
-        function displaySearchResults(results) {
-            const resultsDiv = document.getElementById('searchResults');
-            
-            if (results.length === 0) {
-                resultsDiv.innerHTML = '<div style="text-align: center; padding: 30px; color: #666;">No results found</div>';
-                return;
-            }
-            
-            let html = '';
-            results.forEach(result => {
-                html += `
-                    <div class="search-result" onclick="goToSearchResult('${result.bookId}', ${result.chapter}, ${result.verse})">
-                        <div style="font-weight: bold; color: var(--accent); margin-bottom: 5px;">
-                            ${result.book} ${result.chapter}:${result.verse}
-                        </div>
-                        <div style="font-size: 14px; color: #555;">
-                            ${highlightText(result.text, document.getElementById('searchInput').value)}
-                        </div>
-                    </div>
-                `;
-            });
-            
-            resultsDiv.innerHTML = html;
-        }
-
-        function highlightText(text, query) {
-            if (!query) return text;
-            const regex = new RegExp(`(${query})`, 'gi');
-            return text.replace(regex, '<mark style="background: var(--highlight-yellow); padding: 0 2px;">$1</mark>');
-        }
-
-        function goToSearchResult(bookId, chapter, verse) {
-            state.currentBook = bookId;
-            state.currentBookName = [...state.books.old, ...state.books.new].find(b => b.id === bookId)?.name || bookId;
-            state.currentChapter = chapter;
-            
-            closeModal('searchModal');
-            loadChapter().then(() => {
-                setTimeout(() => {
-                    const verseKey = `${bookId}-${chapter}-${verse}`;
-                    const verseElement = document.querySelector(`[data-verse-key="${verseKey}"]`);
-                    if (verseElement) {
-                        verseElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                        verseElement.style.animation = 'none';
-                        setTimeout(() => {
-                            verseElement.style.animation = 'pulse 1.5s ease';
-                        }, 10);
-                    }
-                }, 100);
-            });
-        }
-
-        // ========== SETTINGS FUNCTIONS ==========
-        function updateFontSize(size) {
-            document.querySelectorAll('.verse-text').forEach(el => {
-                el.style.fontSize = size + 'px';
-            });
-            document.getElementById('fontSizeDisplay').textContent = size + 'px';
-            
-            state.settings.fontSize = size;
-            localStorage.setItem('bibleSettings', JSON.stringify(state.settings));
-        }
-
-        function updateLineHeight(height) {
-            document.querySelectorAll('.verse').forEach(el => {
-                el.style.lineHeight = height;
-            });
-            document.getElementById('lineHeightDisplay').textContent = height;
-            
-            state.settings.lineHeight = height;
-            localStorage.setItem('bibleSettings', JSON.stringify(state.settings));
-        }
-
-        function clearCache() {
-            if (confirm('Clear all your notes and highlights?')) {
-                state.highlights = {};
-                state.notes = {};
-                localStorage.removeItem('bibleHighlights');
-                localStorage.removeItem('bibleNotes');
-                showToast('Notes and highlights cleared');
-            }
+        function openAbout() {
+            alert('Holy Bible Reader - Offline KJV Version\n\nWorks completely offline using local JSON data.');
         }
 
         // ========== UTILITY FUNCTIONS ==========
@@ -1784,8 +1159,10 @@
 
         // ========== EVENT LISTENERS ==========
         document.getElementById('menuBtn').addEventListener('click', toggleSidebar);
-        document.getElementById('searchBtn').addEventListener('click', openSearchModal);
-        document.getElementById('currentRef').addEventListener('click', openBookSelection);
+        document.getElementById('searchBtn').addEventListener('click', () => {
+            alert('Search feature will be implemented in the next version.');
+        });
+        document.getElementById('currentRef').addEventListener('click', openBookModal);
 
         // Close sidebar when clicking outside
         document.addEventListener('click', (e) => {
@@ -1799,6 +1176,15 @@
             }
         });
 
+        // Close modals when clicking outside
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    closeModal(modal.id);
+                }
+            });
+        });
+
         // Keyboard shortcuts
         document.addEventListener('keydown', (e) => {
             if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
@@ -1806,17 +1192,9 @@
             switch(e.key) {
                 case 'ArrowLeft': prevChapter(); break;
                 case 'ArrowRight': nextChapter(); break;
-                case 'b': case 'B': openBookSelection(); break;
-                case 's': case 'S': openSearchModal(); break;
+                case 'b': case 'B': openBookModal(); break;
                 case 'm': case 'M': toggleSidebar(); break;
-                case 'Escape': 
-                    closeAllModals(); 
-                    closeSidebar();
-                    // Close any open screen
-                    document.querySelectorAll('.screen.active').forEach(screen => {
-                        closeScreen(screen.id);
-                    });
-                    break;
+                case 'Escape': closeAllModals(); closeSidebar(); break;
             }
         });
 
@@ -1827,15 +1205,11 @@
                 document.querySelectorAll('.verse-text').forEach(el => {
                     el.style.fontSize = state.settings.fontSize + 'px';
                 });
-                document.getElementById('fontSizeSlider').value = state.settings.fontSize;
-                document.getElementById('fontSizeDisplay').textContent = state.settings.fontSize + 'px';
             }
             if (state.settings.lineHeight) {
                 document.querySelectorAll('.verse').forEach(el => {
                     el.style.lineHeight = state.settings.lineHeight;
                 });
-                document.getElementById('lineHeightSlider').value = state.settings.lineHeight;
-                document.getElementById('lineHeightDisplay').textContent = state.settings.lineHeight;
             }
             
             // Load the Bible data
@@ -1843,10 +1217,13 @@
             
             // Hide navigation hint after 10 seconds
             setTimeout(() => {
-                document.getElementById('navHint').style.opacity = '0';
-                setTimeout(() => {
-                    document.getElementById('navHint').style.display = 'none';
-                }, 300);
+                const navHint = document.getElementById('navHint');
+                if (navHint) {
+                    navHint.style.opacity = '0';
+                    setTimeout(() => {
+                        navHint.style.display = 'none';
+                    }, 300);
+                }
             }, 10000);
         });
     </script>
